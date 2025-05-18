@@ -1,0 +1,139 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  overflow-x: hidden;
+  position: relative;
+}
+
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.3);
+}
+
+header, footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  backdrop-filter: blur(5px);
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
+}
+
+main {
+  padding: 7rem 1rem 5rem;
+  max-width: 800px;
+  margin: auto;
+}
+
+.flashcard {
+  perspective: 1000px;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.card-inner {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  height: 200px;
+  cursor: pointer;
+}
+
+.card-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.card-front {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.card-back {
+  background: rgba(255, 255, 255, 0.2);
+  transform: rotateY(180deg);
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+button {
+  background: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: #00ffc8;
+  color: #000;
+  transform: scale(1.05);
+}
+
+.stats {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.feedback {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  height: 24px;
+  font-weight: bold;
+}
+
+.feedback.correct {
+  color: #00ffc8;
+}
+
+.feedback.wrong {
+  color: #ff4d4d;
+}

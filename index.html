@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Spaced Repetition Flashcards</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <video autoplay muted loop id="bgVideo">
+    <source src="/images1/video2.mp4" type="video/mp4" />
+  </video>
+
+  <header>
+    <h1>Flashcard Engine</h1>
+  </header>
+
+  <main>
+    <div class="stats">
+      <p>Total Attempts: <span id="total">0</span></p>
+      <p>Correct: <span id="correct">0</span></p>
+      <p>Wrong: <span id="wrong">0</span></p>
+    </div>
+
+    <div class="flashcard" id="flashcard">
+      <div class="card-inner" onclick="flipCard()">
+        <div class="card-front" id="card-front"></div>
+        <div class="card-back" id="card-back"></div>
+      </div>
+    </div>
+
+    <div class="feedback" id="feedback"></div>
+
+    <div class="buttons">
+      <button onclick="markAnswer(true)">Correct</button>
+      <button onclick="markAnswer(false)">Wrong</button>
+      <button onclick="flipCard()">Flip</button>
+      <button onclick="nextCard()">Change</button>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Flashcard App</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
